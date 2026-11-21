@@ -4,7 +4,8 @@ export type AnalyticsEvent =
   | "view_product"
   | "click_telegram"
   | "click_custom_order"
-  | "bot_redirect";
+  | "bot_redirect"
+  | "lead_submitted";
 
 type AnalyticsParams = Record<string, string | number | boolean>;
 

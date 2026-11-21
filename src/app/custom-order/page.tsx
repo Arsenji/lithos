@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
-import { TelegramButton } from "@/components/common/TelegramButton";
+import { LeadForm } from "@/components/lead/LeadForm";
 import { getActiveCollections } from "@/data/collections";
-import { customOrderPayload } from "@/lib/telegram";
 
 export const metadata: Metadata = {
   title: "Индивидуальный заказ",
@@ -42,9 +41,7 @@ export default function CustomOrderPage() {
             ))}
           </ol>
         </div>
-        <TelegramButton payload={customOrderPayload} event="click_custom_order" className="mt-10">
-          Обсудить индивидуальный заказ в Telegram
-        </TelegramButton>
+        <LeadForm />
       </Container>
     </main>
   );

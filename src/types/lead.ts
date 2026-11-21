@@ -14,3 +14,12 @@ export type LeadRecord = LeadDraft & {
   createdAt: string;
   status: "new";
 };
+
+export type LeadChannel = "telegram" | "vk";
+
+export type BraceletLead = {
+  productId: string;
+  diameterCm: number;
+  channel: LeadChannel;
+  nickname: string;
+};

@@ -21,16 +21,24 @@ export function MobileMenu({ links }: { links: { href: string; label: string }[]
       </button>
       {open ? (
         <nav id="mobile-nav" className="fixed inset-x-0 top-[72px] bottom-0 z-30 flex flex-col justify-center gap-7 bg-ink px-8">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="font-serif text-3xl tracking-wide"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href.startsWith("http") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="font-serif text-3xl tracking-wide"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="font-serif text-3xl tracking-wide">
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
       ) : null}
     </div>

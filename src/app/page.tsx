@@ -4,7 +4,7 @@ import { CollectionsSection } from "@/components/home/CollectionsSection";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { HandmadeSection } from "@/components/home/HandmadeSection";
 import { Hero } from "@/components/home/Hero";
-import { IndividualOrder } from "@/components/home/IndividualOrder";
+import { LeadForm } from "@/components/lead/LeadForm";
 import { PackagingSection } from "@/components/home/PackagingSection";
 import { TrackView } from "@/components/common/TrackView";
 
@@ -22,7 +22,11 @@ export default function HomePage() {
       <FeaturedProducts />
       <BrandPhilosophy />
       <HandmadeSection />
-      <IndividualOrder />
+      <section className="border-t border-line bg-ink">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+          <LeadForm className="mt-0" />
+        </div>
+      </section>
       <PackagingSection />
     </main>
   );

@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
   if (!product) notFound();
 
   return (
-    <main className="py-10 pb-28 sm:py-16 lg:pb-16">
+    <main className="py-10 sm:py-16">
       <TrackView event="view_product" id={product.id} />
       <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <ProductGallery images={product.images} />

@@ -47,13 +47,14 @@ export function Footer() {
         </div>
         <div>
           <p className="mb-4 text-[11px] tracking-[0.24em] text-muted uppercase">Связь</p>
+          <Link href="/#zayavka" className="text-sm hover:text-gold">
+            Оставить заявку
+          </Link>
           {telegram ? (
-            <a href={telegram} className="text-sm hover:text-gold" target="_blank" rel="noopener noreferrer">
+            <a href={telegram} className="mt-3 block text-sm text-muted hover:text-gold" target="_blank" rel="noopener noreferrer">
               Telegram
             </a>
-          ) : (
-            <p className="text-sm text-muted">Telegram-канал заявок подключается.</p>
-          )}
+          ) : null}
           <ul className="mt-6 space-y-2 text-sm text-muted">
             {legal.map((link) => (
               <li key={link.href}>

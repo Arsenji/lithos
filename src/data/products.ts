@@ -173,6 +173,10 @@ export function getProductBySlug(slug: string) {
   return getActiveProducts().find((product) => product.slug === slug);
 }
 
+export function getProductById(id: string) {
+  return getActiveProducts().find((product) => product.id === id);
+}
+
 export function getProductsByCollection(collectionId: string) {
   return getActiveProducts().filter((product) => product.collectionId === collectionId);
 }

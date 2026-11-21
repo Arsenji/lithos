@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/common/Logo";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { siteConfig } from "@/config/site";
 
 const links = [
   { href: "/", label: "Главная" },
@@ -11,6 +12,9 @@ const links = [
 ];
 
 export function Header() {
+  const telegram = `https://t.me/${siteConfig.telegramBotUsername}`;
+  const menu = [...links, { href: telegram, label: "Telegram" }];
+
   return (
     <header className="sticky top-0 z-20 border-b border-line/80 bg-ink/95">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-6 px-5 sm:px-8">
@@ -24,8 +28,11 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <a href={telegram} target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-[0.14em] text-gold uppercase">
+            Telegram
+          </a>
         </nav>
-        <MobileMenu links={links} />
+        <MobileMenu links={menu} />
       </div>
     </header>
   );
